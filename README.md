@@ -1,6 +1,6 @@
 # Prisma-Python
 
-Aplicação local para gerenciar clientes, pizzas, pedidos e itens de pedido. O backend usa FastAPI, Prisma e MySQL; o frontend é feito com HTML, CSS e JavaScript.
+Aplicação local para gerenciar clientes, pizzas, pedidos e itens de pedido. O backend usa FastAPI, Prisma Client Python (Prisma da comunidade - https://prisma-client-py.readthedocs.io/en/stable/)e MySQL; o frontend é feito com HTML, CSS e JavaScript.
 
 ## Pré-requisitos
 
