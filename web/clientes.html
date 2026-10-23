@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Clientes | Pizzaria</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="clientes">
+
+    <header class="site-header">
+        <a class="brand" href="home.html">Pizzaria</a>
+
+        <nav aria-label="Navegação principal">
+            <a href="home.html">Início</a>
+            <a href="clientes.html" aria-current="page">Clientes</a>
+            <a href="pizzas.html">Pizzas</a>
+            <a href="pedidos.html">Pedidos</a>
+            <a href="itens.html">Itens do pedido</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-heading">
+            <p class="eyebrow">Cadastro</p>
+            <h1>Clientes</h1>
+            <p>Gerencie as pessoas que fazem pedidos na pizzaria.</p>
+        </section>
+
+        <section class="panel">
+            <h2 id="form-cliente-titulo">Cadastrar cliente</h2>
+
+            <form id="form-cliente" onsubmit="salvarCliente(event)">
+                <label>Nome
+                    <input id="cliente-nome" required maxlength="100" placeholder="Nome do cliente">
+                </label>
+                <label>E-mail
+                    <input id="cliente-email" type="email" required maxlength="255" placeholder="cliente@email.com">
+                </label>
+                <label>Telefone
+                    <input id="cliente-telefone" type="tel" maxlength="30" placeholder="(11) 99999-9999">
+                </label>
+
+                <div class="form-actions">
+                    <button class="btn-success" type="submit">Salvar cliente</button>
+                    <button class="btn-primary" type="button" onclick="novoCliente()">Limpar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Clientes cadastrados</h2>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-clientes"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

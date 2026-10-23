@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pedidos | Pizzaria</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="pedidos">
+
+    <header class="site-header">
+        <a class="brand" href="home.html">Pizzaria</a>
+
+        <nav aria-label="Navegação principal">
+            <a href="home.html">Início</a>
+            <a href="clientes.html">Clientes</a>
+            <a href="pizzas.html">Pizzas</a>
+            <a href="pedidos.html" aria-current="page">Pedidos</a>
+            <a href="itens.html">Itens do pedido</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-heading">
+            <p class="eyebrow">Vendas</p>
+            <h1>Pedidos</h1>
+            <p>Associe um pedido a um cliente e acompanhe seu status.</p>
+        </section>
+
+        <section class="panel">
+            <h2 id="form-pedido-titulo">Cadastrar pedido</h2>
+
+            <form id="form-pedido" onsubmit="salvarPedido(event)">
+                <label>Cliente
+                    <select id="pedido-cliente" required>
+                        <option value="">Carregando clientes...</option>
+                    </select>
+                </label>
+                <label>Status
+                    <select id="pedido-status" required>
+                        <option value="PENDENTE">Pendente</option>
+                        <option value="EM_PREPARACAO">Em preparação</option>
+                        <option value="PRONTO">Pronto</option>
+                        <option value="ENTREGUE">Entregue</option>
+                        <option value="CANCELADO">Cancelado</option>
+                    </select>
+                </label>
+
+                <div class="form-actions">
+                    <button class="btn-success" type="submit">Salvar pedido</button>
+                    <button class="btn-primary" type="button" onclick="novoPedido()">Limpar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Pedidos cadastrados</h2>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>ID do cliente</th>
+                            <th>Status</th>
+                            <th>Data</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-pedidos"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

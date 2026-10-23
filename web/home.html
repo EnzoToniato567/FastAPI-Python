@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Início | Pizzaria</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="home">
+
+    <header class="site-header">
+        <a class="brand" href="home.html">Pizzaria</a>
+
+        <nav aria-label="Navegação principal">
+            <a href="home.html" aria-current="page">Início</a>
+            <a href="clientes.html">Clientes</a>
+            <a href="pizzas.html">Pizzas</a>
+            <a href="pedidos.html">Pedidos</a>
+            <a href="itens.html">Itens do pedido</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="welcome panel">
+            <p class="eyebrow">Painel de gestão</p>
+            <h1>Bem-vindo à pizzaria</h1>
+            <p>Gerencie clientes, sabores e pedidos em um só lugar.</p>
+        </section>
+
+        <section class="dashboard-grid" aria-label="Resumo do sistema">
+            <a class="summary-card" href="clientes.html">
+                <span class="summary-label">Clientes</span>
+                <strong id="total-clientes">—</strong>
+                <span>Ver cadastro</span>
+            </a>
+            <a class="summary-card" href="pizzas.html">
+                <span class="summary-label">Pizzas</span>
+                <strong id="total-pizzas">—</strong>
+                <span>Ver cardápio</span>
+            </a>
+            <a class="summary-card" href="pedidos.html">
+                <span class="summary-label">Pedidos</span>
+                <strong id="total-pedidos">—</strong>
+                <span>Ver pedidos</span>
+            </a>
+            <a class="summary-card" href="itens.html">
+                <span class="summary-label">Itens</span>
+                <strong id="total-itens">—</strong>
+                <span>Ver itens dos pedidos</span>
+            </a>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

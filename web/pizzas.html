@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pizzas | Pizzaria</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="pizzas">
+
+    <header class="site-header">
+        <a class="brand" href="home.html">Pizzaria</a>
+
+        <nav aria-label="Navegação principal">
+            <a href="home.html">Início</a>
+            <a href="clientes.html">Clientes</a>
+            <a href="pizzas.html" aria-current="page">Pizzas</a>
+            <a href="pedidos.html">Pedidos</a>
+            <a href="itens.html">Itens do pedido</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-heading">
+            <p class="eyebrow">Cardápio</p>
+            <h1>Pizzas</h1>
+            <p>Cadastre e mantenha os sabores e preços da pizzaria.</p>
+        </section>
+
+        <section class="panel">
+            <h2 id="form-pizza-titulo">Cadastrar pizza</h2>
+
+            <form id="form-pizza" onsubmit="salvarPizza(event)">
+                <label>Nome
+                    <input id="pizza-nome" required maxlength="100" placeholder="Ex.: Margherita">
+                </label>
+                <label>Descrição
+                    <input id="pizza-descricao" maxlength="255" placeholder="Ingredientes ou descrição">
+                </label>
+                <label>Preço (R$)
+                    <input id="pizza-preco" type="number" min="0.01" step="0.01" required placeholder="35,00">
+                </label>
+
+                <div class="form-actions">
+                    <button class="btn-success" type="submit">Salvar pizza</button>
+                    <button class="btn-primary" type="button" onclick="novaPizza()">Limpar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Pizzas cadastradas</h2>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Preço</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-pizzas"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

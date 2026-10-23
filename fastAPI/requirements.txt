@@ -1,0 +1,2 @@
+fastapi[standard]==0.161.1
+prisma==0.15.0

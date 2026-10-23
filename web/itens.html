@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Itens do pedido | Pizzaria</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="itens">
+
+    <header class="site-header">
+        <a class="brand" href="home.html">Pizzaria</a>
+
+        <nav aria-label="Navegação principal">
+            <a href="home.html">Início</a>
+            <a href="clientes.html">Clientes</a>
+            <a href="pizzas.html">Pizzas</a>
+            <a href="pedidos.html">Pedidos</a>
+            <a href="itens.html" aria-current="page">Itens do pedido</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-heading">
+            <p class="eyebrow">Composição</p>
+            <h1>Itens do pedido</h1>
+            <p>Adicione pizzas aos pedidos existentes e escolha a quantidade.</p>
+        </section>
+
+        <section class="panel">
+            <h2 id="form-item-titulo">Cadastrar item</h2>
+
+            <form id="form-item" onsubmit="salvarItem(event)">
+                <label>Pedido
+                    <select id="item-pedido" required>
+                        <option value="">Carregando pedidos...</option>
+                    </select>
+                </label>
+                <label>Pizza
+                    <select id="item-pizza" required>
+                        <option value="">Carregando pizzas...</option>
+                    </select>
+                </label>
+                <label>Quantidade
+                    <input id="item-quantidade" type="number" min="1" step="1" required value="1">
+                </label>
+
+                <div class="form-actions">
+                    <button class="btn-success" type="submit">Salvar item</button>
+                    <button class="btn-primary" type="button" onclick="novoItem()">Limpar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Itens cadastrados</h2>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>ID do pedido</th>
+                            <th>ID da pizza</th>
+                            <th>Quantidade</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-itens"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-py"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Cliente {
+  id       Int      @id @default(autoincrement())
+  nome     String
+  email    String   @unique
+  telefone String?
+  pedidos  Pedido[]
+}
+
+model Pizza {
+  id       Int     @id @default(autoincrement())
+  nome     String
+  descricao String?
+  preco    Float
+  pedidos  ItemPedido[]
+}
+
+enum StatusPedido {
+  PENDENTE
+  EM_PREPARACAO
+  PRONTO
+  ENTREGUE
+  CANCELADO
+}
+
+model Pedido {
+  id        Int         @id @default(autoincrement())
+  data      DateTime    @default(now())
+  status    StatusPedido @default(PENDENTE)
+  clienteId Int
+  cliente   Cliente     @relation(fields: [clienteId], references: [id])
+  itens     ItemPedido[]
+}
+
+model ItemPedido {
+  id        Int   @id @default(autoincrement())
+  quantidade Int
+  pedidoId  Int
+  pizzaId   Int
+
+  pedido Pedido @relation(fields: [pedidoId], references: [id])
+  pizza  Pizza  @relation(fields: [pizzaId], references: [id])
+}
