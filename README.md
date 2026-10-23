@@ -2,6 +2,8 @@
 
 Aplicação local para gerenciar clientes, pizzas, pedidos e itens de pedido. O backend usa FastAPI, Prisma Client Python (Prisma da comunidade - https://prisma-client-py.readthedocs.io/en/stable/) e MySQL; o frontend é feito com HTML, CSS e JavaScript.
 
+>! ATENÇÃO: O link do pages é apenas para exemplo visual. A API do baceknd não funcionará na url do pages, apenas localmente.
+
 ## Pré-requisitos
 
 - Windows e CMD.
