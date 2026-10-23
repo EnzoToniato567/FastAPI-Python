@@ -85,6 +85,8 @@ uvicorn app:app --reload
 
 Mantenha essa janela do CMD aberta enquanto usar o sistema. A documentação interativa da API fica em `http://127.0.0.1:8000/docs`.
 
+> Se quiser testar as requisições da API pelo Insomnia, basta ir na pasta [/docs](./docs/Insomnia_2026-10-23-12-41-22.yaml) e importar o arquivo `Insomnia_2026-10-23-12-41-22.yaml` dentro do Insomnia.
+
 ## Iniciar o frontend
 
 Com o backend rodando, abra **outra** janela do CMD na pasta principal do projeto. Inicie o servidor web a partir da pasta `web`:
